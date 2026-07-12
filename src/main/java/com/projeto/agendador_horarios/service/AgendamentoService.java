@@ -1,5 +1,7 @@
 package com.projeto.agendador_horarios.service;
 
+import com.projeto.agendador_horarios.exception.AgendamentoNaoEncontradoException;
+import com.projeto.agendador_horarios.exception.HorarioOcupadoException;
 import com.projeto.agendador_horarios.infrastructure.entity.AgendamentoEntity;
 import com.projeto.agendador_horarios.infrastructure.repository.AgendamentoRepository;
 import jakarta.transaction.Transactional;
@@ -16,7 +18,6 @@ import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
-
 public class AgendamentoService {
     private final AgendamentoRepository agendamentoRepository;
 
@@ -31,7 +32,7 @@ public class AgendamentoService {
                 horaFim );
 
         if (Objects.nonNull(agendados)){// se esta preenchido n pode salvar nele
-            throw new RuntimeException("Horário ja esta preenchido");
+            throw new HorarioOcupadoException("Horário já esta ocupado");
         }
         return agendamentoRepository.save(agendamento);
 
@@ -52,10 +53,10 @@ public class AgendamentoService {
         AgendamentoEntity agenda = agendamentoRepository.findByDataHoraAgendamentoAndCliente( dataHoraAgendamento, cliente);
 
         if (Objects.isNull(agenda)){// se esta preenchido n pode salvar nele
-            throw new RuntimeException("Horário não esta preenchido");
+            throw new AgendamentoNaoEncontradoException("Agendamento não encontrado");
         }
         agendamento.setId(agenda.getId());//substitui o id antigo pelo novo com as alteracoes
-        return agendamentoRepository.save(agenda);
+        return agendamentoRepository.save(agendamento);
 
     }
 }

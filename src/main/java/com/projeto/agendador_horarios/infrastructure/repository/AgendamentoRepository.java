@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public interface AgendamentoRepository extends JpaRepository<AgendamentoEntity, Long> {
+
     AgendamentoEntity findByServicoAndDataHoraAgendamentoBetween(String Servico,
                                                                  LocalDateTime dataHoraInicio,
                                                                  LocalDateTime dataFim);
