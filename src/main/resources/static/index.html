@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tapeçaria - Agendamento de Serviços</title>
+    <link rel="stylesheet" href="/style/tela_inicial.css">
+    <script src="/js/script.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>Tapeçaria Exemplo</h1>
+    <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#agendar">Agendar</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+
+<main>
+
+    <section id="sobre">
+        <h2>Sobre nós</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+    </section>
+
+    <section id="servicos">
+        <h2>Nossos serviços</h2>
+
+        <article>
+            <h3>Reforma de sofás</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+        </article>
+
+        <article>
+            <h3>Troca de tecido</h3>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+        </article>
+
+        <article>
+            <h3>Cortinas e estofados</h3>
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+        </article>
+    </section>
+
+    <section id="agendar">
+        <h2>Agendar atendimento</h2>
+        <p>Preencha os dados abaixo e entraremos em contato para confirmar o seu horário.</p>
+
+        <form id="formAgendamento">
+            <p>
+                <label for="tipoServico">Tipo de serviço</label><br>
+                <input type="text" id="tipoServico" name="tipoServico" required>
+            </p>
+            <p>
+                <label for="tapeceiro">Tapeceiro</label><br>
+                <input type="text" id="tapeceiro" name="tapeceiro" required>
+            </p>
+            <p>
+                <label for="dataHoraAgendamento">Data e hora</label><br>
+                <input type="datetime-local" id="dataHoraAgendamento" name="dataHoraAgendamento" required>
+            </p>
+            <p>
+                <label for="cliente">Seu nome</label><br>
+                <input type="text" id="cliente" name="cliente" required>
+            </p>
+            <p>
+                <label for="telefoneCliente">Telefone</label><br>
+                <input type="tel" id="telefoneCliente" name="telefoneCliente" required>
+            </p>
+            <button type="submit">Agendar</button>
+            <div id="mensagem" role="status" aria-live="polite"></div>
+        </form>
+    </section>
+
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <ul>
+            <li>Endereço: Rua Lorem Ipsum, 123</li>
+            <li>Telefone: (00) 00000-0000</li>
+            <li>E-mail: contato@exemplo.com</li>
+        </ul>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Tapeçaria Exemplo. Lorem ipsum dolor sit amet.</p>
+</footer>
+
+</body>
+</html>

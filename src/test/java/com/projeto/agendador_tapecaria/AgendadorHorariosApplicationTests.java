@@ -1,4 +1,4 @@
-package com.projeto.agendador_horarios;
+package com.projeto.agendador_tapecaria;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.projeto.agendador_horarios.exception;
+package com.projeto.agendador_tapecaria.exception;
 
 public class AgendamentoNaoEncontradoException extends RuntimeException {
 
