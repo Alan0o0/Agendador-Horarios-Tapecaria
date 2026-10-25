@@ -63,10 +63,24 @@
                 <input type="text" id="tapeceiro" name="tapeceiro" required>
             </p>
             <p>
-                <label for="dataHoraAgendamento">Data e hora</label><br>
-                <input type="datetime-local" id="dataHoraAgendamento" name="dataHoraAgendamento" required>
+                <label for="dataAgendamento">Data</label><br>
+                <input type="date" id="dataAgendamento" name="dataAgendamento" required>
             </p>
             <p>
+                <label for="horaAgendamento">Horário</label><br>
+                <select id="horaAgendamento" name="horaAgendamento" required>
+                    <option value="">Escolha o horário</option>
+                    <option value="08:00">08:00</option>
+                    <option value="09:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="18:00">18:00</option>
+                </select>
+            </p>
                 <label for="cliente">Seu nome</label><br>
                 <input type="text" id="cliente" name="cliente" required>
             </p>
