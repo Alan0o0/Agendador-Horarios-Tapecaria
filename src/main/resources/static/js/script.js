@@ -1,11 +1,26 @@
 const formulario = document.getElementById("formAgendamento");
+const campoData = document.getElementById("dataAgendamento");
+const mensagem = document.getElementById("mensagem");
+
+// Bloqueia dias anteriores a hoje no calendário
+const hoje = new Date();
+const ano = hoje.getFullYear();
+const mes = String(hoje.getMonth() + 1).padStart(2, "0");
+const dia = String(hoje.getDate()).padStart(2, "0");
+campoData.min = `${ano}-${mes}-${dia}`;
 
 formulario.addEventListener("submit", async function(event){
     event.preventDefault();
 
-    const data = document.getElementById("dataAgendamento").value;
+    const data = campoData.value;
     const hora = document.getElementById("horaAgendamento").value;
     const dataHoraAgendamento = data + "T" + hora;
+
+    // Não deixa agendar no passado (inclui hoje em horário que já passou)
+    if (new Date(dataHoraAgendamento) < new Date()) {
+        mensagem.textContent = "Escolha uma data e horário que ainda não passaram.";
+        return;
+    }
 
     const agendamento = {
         tipoServico: document.getElementById("tipoServico").value,
@@ -17,7 +32,6 @@ formulario.addEventListener("submit", async function(event){
 
     console.log(agendamento);
 
-    const mensagem = document.getElementById("mensagem");
     try{
         const resposta = await fetch("/agendamentos", {
             method: "POST",
