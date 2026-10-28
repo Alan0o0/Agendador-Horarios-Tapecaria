@@ -5,9 +5,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import java.time.LocalDateTime;
 import java.util.List;
 
-/**
- * Formato único de erro devolvido ao cliente (front-end) por todos os handlers.
- */
+//Formato único de erro devolvido ao cliente por todos os handlers.
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public record RespostaErro(
         int status,
