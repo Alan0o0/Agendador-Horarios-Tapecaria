@@ -1,4 +1,4 @@
-/* problema com grid blowout resolvido */
+/* problema classico grid blowout resolvido */
 :root {
     --texto: #2a3a36;
     --texto-suave: #53645f;
@@ -110,7 +110,7 @@ main section {
 #agendar  { background: var(--bloco-agendar); }
 #contato  { background: var(--bloco-contato); }
 
-/*título na esquerda, texto na direita */
+/*título na esquerda e o texto na direita */
 #sobre {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -144,7 +144,7 @@ main section {
     color: var(--texto-suave);
 }
 
-/* texto na esquerda, formulário à direita*/
+/* texto na esquerda, formulário a direita  */
 
 input,
 select {
@@ -250,7 +250,7 @@ button:focus-visible {
     display: none;
 }
 
-/*Contatos */
+/* Contatos */
 #contato {
     display: grid;
     grid-template-columns: 1fr 2fr;
